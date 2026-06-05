@@ -37,6 +37,9 @@ This project builds a pharmacy analytics dashboard that answers three questions 
 ---
 
 ### Data Sources
+rx_claims.csv 5000 Retail Rx claims with 38 fields including NDC, AWP, WAC, AAC. MAC pricing, DIR fees, NCPDP reject codes, DAW codes, dospensing fees, per-claim net profit
+
+**Key dimensions in `rx_claims.csv`:**
 
 
 ---

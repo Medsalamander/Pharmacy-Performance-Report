@@ -37,9 +37,41 @@ This project builds a pharmacy analytics dashboard that answers three questions 
 ---
 
 ### Data Sources
-rx_claims.csv 5000 Retail Rx claims with 38 fields including NDC, AWP, WAC, AAC. MAC pricing, DIR fees, NCPDP reject codes, DAW codes, dospensing fees, per-claim net profit
+rx_claims.csv - 5000 Retail Rx claims with 38 fields including NDC, AWP, WAC, AAC. MAC pricing, DIR fees, NCPDP reject codes, DAW codes, dospensing fees, per-claim net profit
 
 **Key dimensions in `rx_claims.csv`:**
+
+| Dimension | Count | Examples |
+|-----------|-------|---------|
+| Payers | 7 | CVS Caremark, Express Scripts, OptumRx, MedImpact, Medicare Part D, Medicaid, Cash/Self-Pay |
+| Drugs (NDC) | 20 | Atorvastatin, Metformin, Lisinopril, Eliquis, Ozempic, Adalimumab, Adalimumab-adbm |
+| Pharmacies | 4 | Main St Pharmacy, Westside Rx, Community Care Pharmacy, Health Plus Pharmacy |
+| Patients | 115 | Chronic medication cohort, ~43.5 Rx per patient |
+| Prescribers | 5 | Internal Medicine, Cardiology, Endocrinology, Primary Care, Oncology |
+| Date range | 24 months | Jan 2023 – Dec 2024 |
+| Claim statuses | 3 | PAID (4,375), REJECTED (389), REVERSED (236) |
+
+**Additional table loaded via SQL Server:**
+
+| Table | Rows | Description |
+|-------|------|-------------|
+| `Payer_Negotiation` | 7 | Aggregated payer-level metrics: avg reimbursement, avg AAC, avg net profit, variance from benchmark, rate increase needed — loaded via SQL Server advanced query |
+
+| Table | Rows | Description |
+|-------|------|-------------|
+| `Payer_Negotiation` | 7 | Aggregated payer-level metrics: avg reimbursement, avg AAC, avg net profit, variance from benchmark, rate increase needed — loaded via SQL Server advanced query |
+---
+
+### Tools
+
+| Tool | Purpose |
+|------|---------|
+| **SQL Server** | Claims querying, rejection analysis, payer profitability, concurrent payer detection via self-joins, patient profitability ranking with window functions, contract negotiation brief generation with benchmark variance and rate increase calculations |
+| **Microsoft Excel** | Reimbursement model prototyping, payer comparison matrices, KPI dashboard with conditional formatting and benchmarks, pivot tables for drug and payer profitability, monthly trend charts with dual-axis visualization |
+| **Power BI Desktop** | Production dashboard: 4 interactive pages, 8 DAX measures, dynamic CALENDARAUTO() date table, conditional formatting, rolling average trend analysis, YoY comparison, bubble chart payer strategy matrix, contract intelligence table |
+| **Power Query** | Data ingestion, automatic type detection, column quality profiling, query renaming |
+| **DAX** | 8 custom measures including time intelligence (SAMEPERIODLASTYEAR, DATESINPERIOD), safe division (DIVIDE), filtered aggregations (CALCULATE), and context removal (ALL) |
+| **Python** | Dataset generation, K-Means clustering for drug portfolio segmentation (scikit-learn), cross-tool validation of calculations |
 
 
 ---

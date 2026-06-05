@@ -24,6 +24,14 @@
 ---
 
 ### Project Overview
+Independent retail pharmacies in the United States are closing at a rate of roughly one per day. The core problem is a structural margin crisis: PBM reimbursement rates on generic drugs have fallen below pharmacy acquisition costs, retroactive DIR fee clawbacks destroy casg flow predictatbility, and rising prescription volume have become loss drivers rather than covering overhead.
+This project builds a pharmacy analytics dashboard that answers three questions a pharmacy owner needs answered before walking into a PBM contract negotiation:
+
+1. **Which payers and drugs are profitable - and which are quietly destroying the business?**
+2. **What specific data-backed rate increases should be requested from each PBM?**
+3. **Is the pharmacy's financial trajectory improving or deteriorating, and at what rate?**
+   
+ The analysis covers 5,000 NCPDP- style retail claims spanning January 2023 through December 2024, processed acrss 7 payer channels (CVS Caremark, Express Scripts, OptumRx, MedImpact, Medicare Part D, Medicaid, and Cash/Self-pay) at 4 Massachusetts pharmacy locations.
 
 
 ---

@@ -272,14 +272,23 @@ The dashboards consists of 4 interactive pages connected by a page navigayor, wi
 | 3 | **Renegotiate OptumRx contract** - 7.09% rate increase to reach break-even + 5% margin | +$5,637 recovery | Data-derived |
 | 4 | **Renegotiate Express Scripts & MedImpact** - 6.1% & 6.4% increases respectively | +$3,506 recovery | Data-derived |
 | 5 | **Protect CVS Caremark relationship** - only commercial PBM generating positive margin | Defensive | Data-derived |
-| 6 | **Grow Cash-pay volume** - discount card programs, transparent pricing, memberhsip model | Strategic |
+| 6 | **Grow Cash-pay volume** - discount card programs, transparent pricing, memberhsip model | Variable | Strategic
 | 7 | **Diversify revenue** - MTM, immunizations, point-of-care testing, compunding | Estimated +$18k | Industry Benchmark |
+| 8 | **Monitor FDA biosimilar pipeline** - anticipate MAC repricing events 30-90 days post-approval | Risk mitigation | Strategic |
 
 
 ---
 
 
 ### Limitations
+
+- **Synthetic data:** Claims dataset is generated — findings demonstrate analytical methodology rather than real-world pharmacy financials
+- **Overhead assumption:** $8.36/Rx overhead estimate is based on typical independent pharmacy cost structures and is not derived from the dataset
+- **Static AAC:** Drug acquisition costs are fixed at generation — real-world AAC fluctuates with wholesaler contracts, GPO membership, and purchasing volume
+- **DIR fee simplification:** DIR fees are modeled as a flat percentage at claim level — actual DIR reconciliation occurs quarterly or annually with complex performance tier calculations
+- **No front-end revenue:** Analysis covers prescription dispensing only — excludes OTC sales, front-end retail, and clinical service revenue
+- **Industry benchmark estimates:** Revenue projections for MTM, immunization, and point-of-care programs are industry averages, not derived from this dataset
+- **Single data source:** The Payer_Negotiation table is derived from the same rx_claims dataset — in production this would be sourced from contract management systems
 
 ---
 

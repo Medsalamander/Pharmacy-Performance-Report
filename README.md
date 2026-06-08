@@ -90,8 +90,8 @@ rx_claims.csv - 5000 Retail Rx claims with 38 fields including NDC, AWP, WAC, AA
 4. Date format: Text-to-Columns conversion from left-aligned text to right-aligned true date values
 
 **Data model (Power BI):**
-1. Dynnamic date table created via `CALENDARAUTO()` with `ADDCOLUMNS` ➡️ 731 rows, 8 columns (Date, Year, Month_Num, Year_Month, Quarter, Day_of_Week, Is_Weekend, Sort_key)
-2. Relationship established: `Date_Table[Date] ➡️ `Claims[FILL_DATE` (one-to-many)
+1. Dynamic date table created via `CALENDARAUTO()` with `ADDCOLUMNS` ➡️ 731 rows, 8 columns (Date, Year, Month_Num, Year_Month, Quarter, Day_of_Week, Is_Weekend, Sort_key)
+2. Relationship established: `Date_Table[Date] ➡️ `Claims[FILL_DATE]` (one-to-many)
 3. Payer_Negotiation table loaded via SQL Server advanced query
 4. Date_Table marhed as official date table for time intelligence
 5. _Measures table created to organize all DAX measures centrally.

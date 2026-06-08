@@ -265,6 +265,15 @@ The dashboards consists of 4 interactive pages connected by a page navigayor, wi
 
 
 ### Recommendations
+| Priority | Action | Expected Annual Impact | Data Source |
+|----------|--------|------------------------|-------------|
+| 1 | **Eliminate Adalimumab-adbm** - switch to JIT stocking, max 5 units on hand | +$86,017 | Data-derived |
+| 2 | **Renegotiate dispensing fees** - clsoe the $6.61/claim gap x 4,375 annual claims | +$28,918 | Data-derived |
+| 3 | **Renegotiate OptumRx contract** - 7.09% rate increase to reach break-even + 5% margin | +$5,637 recovery | Data-derived |
+| 4 | **Renegotiate Express Scripts & MedImpact** - 6.1% & 6.4% increases respectively | +$3,506 recovery | Data-derived |
+| 5 | **Protect CVS Caremark relationship** - only commercial PBM generating positive margin | Defensive | Data-derived |
+| 6 | **Grow Cash-pay volume** - discount card programs, transparent pricing, memberhsip model | Strategic |
+| 7 | **Diversify revenue** - MTM, immunizations, point-of-care testing, compunding | Estimated +$18k | Industry Benchmark |
 
 
 ---

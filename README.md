@@ -209,6 +209,7 @@ ADDCOLUMNS(
 ---
 
 ### Dashboard
+[**Explore Dashboard Here](https://app.powerbi.com/view?r=eyJrIjoiNWM3NGQ3ZjItYjA5NS00YjJhLTk4NGUtYmQ5ZmQ2NmE2MGYwIiwidCI6IjJmMDFkOTZmLTgyYjMtNDY5My1hNTM3LTAwMTkxMGVkNmUyYSIsImMiOjZ9)
 
 The dashboards consists of 4 interactive pages connected by a page navigayor, with a date range slice (Jan 2023 - Dec 2024) persisting across all pages.
 

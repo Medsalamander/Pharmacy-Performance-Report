@@ -101,12 +101,93 @@ rx_claims.csv - 5000 Retail Rx claims with 38 fields including NDC, AWP, WAC, AA
 
 ### Exploratory Data Analysis
 
+Questions investigated through SQL, Excel, and Power BI:
+
+- What is the pharmacy's true net profit on 5,000 claims and $1.7M gross reimbursement?
+- Which payers are the profitable and which are destroying value - and by how much?
+- Are generic drugs or brand drugs driving profitability?
+- What is the per-claim financial impact of DIR fees on Medicare Part D?
+- Which individual drug should be eliminated immediately?
+- How does the pharmacy's profitability trajectory look 2023 vs 2024?
+- What specific contract rate increases should be requested from each PBM?
+- Are patients using multiple payers concurrently or sequentially?
+
 
 ---
 
 
 ### Data Analysis
 
+**SQL - Payer Contract Negotiation Brief:**
+
+```sql
+SELECT 
+	PAYER_NAME,
+	COUNT(*) AS rx_volume,
+	ROUND(AVG(TOTAL_REIMB),2) AS avg_reimbursement,
+	ROUND(AVG(AAC),2) AS avg_aac,
+	ROUND(AVG(NET_PROFIT),2) AS avg_net_profit,
+	ROUND(AVG(TOTAL_REIMB) - AVG(AVG(TOTAL_REIMB)) OVER(),2) AS variance_from_avg,
+	CASE
+		WHEN ((AVG(AAC) * 1.05 + 1.75) - AVG(TOTAL_REIMB)) / AVG(TOTAL_REIMB) <= 0
+		THEN 'No Increase Needed'
+		ELSE CAST(ROUND(
+			((AVG(AAC) * 1.05 + 1.75) - AVG(TOTAL_REIMB)) / AVG(TOTAL_REIMB)
+			,4) AS VARCHAR(20))
+		END AS rate_increase_needed_pct
+FROM dbo.rx_claims
+WHERE CLAIM_STATUS = 'PAID'
+GROUP BY PAYER_NAME
+ORDER BY avg_net_profit DESC
+```
+
+**DAX - Measures Created:**
+
+```dax
+Total Rx Volume =
+COUNTROWS(FILTER(Claims, Claims[CLAIM_STATUS] = "PAID"))
+
+Gross Reimbursement =
+CALCULATE(SUM(Claims[TOTAL_REIMB]), Claims[CLAIM_STATUS] = "PAID")
+
+Total Net Profit =
+CALCULATE(SUM(Claims[NET_PROFIT]), Claims[CLAIM_STATUS] = "PAID")
+
+Avg Net Profit per Rx =
+DIVIDE([Total Net Profit], [Total Rx Volume], 0)
+
+GDR =
+DIVIDE(
+    CALCULATE(COUNTROWS(Claims),
+        Claims[CLAIM_STATUS] = "PAID",
+        Claims[IS_BRAND] = FALSE()),
+    CALCULATE(COUNTROWS(Claims),
+        Claims[CLAIM_STATUS] = "PAID"),
+    0)
+
+Rejection Rate =
+DIVIDE(
+    COUNTROWS(FILTER(Claims, Claims[CLAIM_STATUS] = "REJECTED")),
+    COUNTROWS(Claims),
+    0)
+Rolling 3M Avg Profit per Rx =
+DIVIDE(
+    CALCULATE([Total Net Profit],
+        DATESINPERIOD(Date_Table[Date],
+            LASTDATE(Date_Table[Date]), -3, MONTH)),
+    CALCULATE([Total Rx Volume],
+        DATESINPERIOD(Date_Table[Date],
+            LASTDATE(Date_Table[Date]), -3, MONTH)),
+    0)
+
+Net Profit YoY Change =
+VAR CurrentYear = [Total Net Profit]
+VAR PriorYear =
+    CALCULATE([Total Net Profit],
+        SAMEPERIODLASTYEAR(Date_Table[Date]))
+RETURN DIVIDE(CurrentYear - PriorYear, ABS(PriorYear), 0)
+
+```
 
 ---
 

@@ -78,6 +78,20 @@ rx_claims.csv - 5000 Retail Rx claims with 38 fields including NDC, AWP, WAC, AA
 
 ### Data Cleaning & Preparation
 
+**Power Query (data loading):**
+1. Loaded `rx_claims.csv` through Get Data - Text/csv - Transform Data
+2. Automatic type detection correctly identified all 38 columns FILL_DATE as Date
+3. Column quality profiling confirmed: 100% valid, 0% errors, 0% empty across all critical columns
+
+**Excel Validation (pre-Power BI):**
+1. Row count: `=COUNTA(A:A)-1 - 5,00 CONFIRMED
+2. Missing values: `=COUNTBLANK()` on CLAIM_ID, FILL_DATE, NDC, PAYER_NAME, NET_PROFIT - all returned 0
+3. Duplicate check: COUNTIF-based analysis confirmed 0 duplicate CLAIM_IDs
+4. Date format: Text-to-Columns conversion from left-aligned text to right-aligned true date values
+
+**Data model (Power BI):**
+1. Dynnamic date table created via `CALENDARAUTO()` with `ADDCOLUMNS` - 731 rows. 8 columns
+
 
 ---
 

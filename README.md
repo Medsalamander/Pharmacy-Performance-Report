@@ -250,9 +250,9 @@ The dashboards consists of 4 interactive pages connected by a page navigayor, wi
 - Prescription volume growing while profit declining - structural margin problem
 
 **6. Payer Concentration & Gaps**
-- CVS Caremark is the **only** profitable commercial PBM at **10.67/Rx**
+- CVS Caremark is the **only** profitable commercial PBM at **$10.67/Rx**
 - OptumRx requires a **7.09% rate increase** - the highest negotiation priority
-- Cash/Self-Pay generates the higest margin at **33.78/Rx** despite the lowest volume
+- Cash/Self-Pay generates the higest margin at **$33.78/Rx** despite the lowest volume
 
 **7. Below-Benchmark Quality Metrics**
 - Generic Dispensing Rate at **60.16%** - well below the 88% industry benchmark

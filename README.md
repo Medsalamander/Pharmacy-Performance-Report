@@ -223,7 +223,7 @@ The dashboards consists of 4 interactive pages connected by a page navigayor, wi
 ![Payer Performance](<assets/Payer performance.png>)
 
 **Page 4 - Contract Intelligence**
-![Contract Intelligence](<Contract Intelligence.png>)
+![Contract Intelligence](<assets/Contract Intelligence.png>)
 
 ---
 

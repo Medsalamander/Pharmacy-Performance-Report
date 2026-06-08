@@ -189,6 +189,23 @@ RETURN DIVIDE(CurrentYear - PriorYear, ABS(PriorYear), 0)
 
 ```
 
+**DAX - Dynamic Date Table:**
+
+```dax
+Date_Table =
+ADDCOLUMNS(
+    CALENDARAUTO(),
+    "Year",        YEAR([Date]),
+    "Month_Num",   MONTH([Date]),
+    "Month_Name",  FORMAT([Date], "MMM"),
+    "Year_Month",  FORMAT([Date], "MMM-YYYY"),
+    "Quarter",     "Q" & QUARTER([Date]),
+    "Day_of_Week", FORMAT([Date], "DDD"),
+    "Is_Weekend",  IF(WEEKDAY([Date], 2) >= 6, "Weekend", "Weekday"),
+    "Sort_Key",    YEAR([Date]) * 100 + MONTH([Date])
+)
+```
+
 ---
 
 ### Dashboard

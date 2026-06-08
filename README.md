@@ -244,7 +244,7 @@ The dashboards consists of 4 interactive pages connected by a page navigayor, wi
 - **55%** of Medicare Part D paid claims are unprofitable
 - Break-even dispensing fee at 6% DIR rate is mathematically negative -  no fee can make these claims profitable
 
-**Parallel Shift Deterioration**
+**5. Parallel Shift Deterioration**
 - 2023 net profit: **$5,308** vs 2024 net loss: **-$8,294** - a **$13,602 year-over-year swing**
 - 2023 consistently outperforms 2024 at every month in the YoY comparison
 - Prescription volume growing while profit declining - structural margin problem

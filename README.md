@@ -214,13 +214,14 @@ ADDCOLUMNS(
 The dashboards consists of 4 interactive pages connected by a page navigayor, with a date range slice (Jan 2023 - Dec 2024) persisting across all pages.
 
 **Page 1 - Executive Summary**
+[Executive Summary](assets/Executive Summary.png)
 
 **Page 2 - Monthly Trends**
-
+[]()
 **Page 3 - Payer Performance**
-
+[]()
 **Page 4 - Contract Intelligence**
-
+[]()
 ---
 
 

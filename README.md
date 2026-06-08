@@ -217,11 +217,14 @@ The dashboards consists of 4 interactive pages connected by a page navigayor, wi
 ![Executive Summary](<assets/Executive Summary.png>)
 
 **Page 2 - Monthly Trends**
-[]()
+![Monthly Trends](<assets/Monthly Trends>)
+
 **Page 3 - Payer Performance**
-[]()
+![Payer Performance](<assets/Payer Performance>)
+
 **Page 4 - Contract Intelligence**
-[]()
+![Contract Intelligence](<Contract Intelligence>)
+
 ---
 
 

@@ -225,6 +225,24 @@ The dashboards consists of 4 interactive pages connected by a page navigayor, wi
 
 ### Results & Findings
 
+**1. Near-Zero Net Margin**
+- $1,699,890 gross reimbursement across 4,375 paid claims produced a net loss of **-$2,987** - a **-0.18% net margin**
+- Average net profit per prescription: **-$0.68**
+
+**2. Universal Generic Drug Losses**
+- Generic drugs lose money under **every** commercial PBM
+- Total generic losses: **-$88,250** vs total brand profits: **$85,263**
+- Net result: **-$2,987** - brand profits are being enitrely consumed by generic losses
+
+**3. Biosimilar Burning Platform**
+- Adalimumab-adbm (Humira biosimilar): **-$86,017** total loss at **-$1,162 per claim**
+- One drug accounts for **94.8%** of all drug-level losses
+- K-means clustering algorithm independently isolated this drug into its own cluster
+
+**4. Medicare Part D DIR Destruction**
+- Average net loss of **-$17.54 per claim** under Medicare Part D
+
+
 
 ---
 

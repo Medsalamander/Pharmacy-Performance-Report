@@ -84,13 +84,17 @@ rx_claims.csv - 5000 Retail Rx claims with 38 fields including NDC, AWP, WAC, AA
 3. Column quality profiling confirmed: 100% valid, 0% errors, 0% empty across all critical columns
 
 **Excel Validation (pre-Power BI):**
-1. Row count: `=COUNTA(A:A)-1 - 5,00 CONFIRMED
+1. Row count: `=COUNTA(A:A)-1` ➡️ 5,00 CONFIRMED
 2. Missing values: `=COUNTBLANK()` on CLAIM_ID, FILL_DATE, NDC, PAYER_NAME, NET_PROFIT - all returned 0
 3. Duplicate check: COUNTIF-based analysis confirmed 0 duplicate CLAIM_IDs
 4. Date format: Text-to-Columns conversion from left-aligned text to right-aligned true date values
 
 **Data model (Power BI):**
-1. Dynnamic date table created via `CALENDARAUTO()` with `ADDCOLUMNS` - 731 rows. 8 columns
+1. Dynnamic date table created via `CALENDARAUTO()` with `ADDCOLUMNS` ➡️ 731 rows, 8 columns (Date, Year, Month_Num, Year_Month, Quarter, Day_of_Week, Is_Weekend, Sort_key)
+2. Relationship established: `Date_Table[Date] ➡️ `Claims[FILL_DATE` (one-to-many)
+3. Payer_Negotiation table loaded via SQL Server advanced query
+4. Date_Table marhed as official date table for time intelligence
+5. _Measures table created to organize all DAX measures centrally.
 
 
 ---

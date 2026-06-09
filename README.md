@@ -300,4 +300,6 @@ The dashboards consists of 4 interactive pages connected by a page navigayor, wi
 
 ### References
 
+- CMS Medicare Part D DIR Fee Policy — [cms.gov](https://www.cms.gov/newsroom/fact-sheets/medicare-part-d-direct-indirect-remuneration-dir)
+
 
